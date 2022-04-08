@@ -15,6 +15,5 @@ class MainViewModel(private val pagingSource: RedditPagingSource) : ViewModel() 
         ).flow
             .stateIn(viewModelScope, SharingStarted.Lazily, PagingData.empty())
 
-
 }
 

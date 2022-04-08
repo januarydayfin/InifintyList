@@ -10,6 +10,8 @@
         android:id="@+id/posts_recycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:listitem="@layout/post_template"/>
+        tools:listitem="@layout/post_template"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"/>
 
 </FrameLayout>

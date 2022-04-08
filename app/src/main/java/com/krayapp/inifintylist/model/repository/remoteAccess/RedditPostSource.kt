@@ -10,7 +10,7 @@ interface RedditPostSource {
     @GET("r/aww/hot.json")
     suspend fun getPosts(
         @Query("page") @IntRange(from = 1) page: Int = 1,
-        @Query("pageSize") @IntRange(from = 1, to = MAX_PAGE_SIZE.toLong()) pageSize: Int = DEFAULT_PAGE_SIZE,
+        @Query("pageSize") @IntRange(from = 1, to = MAX_PAGE_SIZE.toLong()) pageSize: Int = DEFAULT_PAGE_SIZE
     ):Response<RedditRequestDTO>
 
     companion object {
