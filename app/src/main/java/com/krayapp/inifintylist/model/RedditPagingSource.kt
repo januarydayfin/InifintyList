@@ -3,6 +3,7 @@ package com.krayapp.inifintylist.model
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.krayapp.inifintylist.model.repository.remoteAccess.RedditPostSource
+import com.krayapp.inifintylist.toPost
 import retrofit2.HttpException
 
 class RedditPagingSource(

@@ -10,15 +10,6 @@ data class ChildrenDTO(
     @SerializedName("children") val children: List<ChildrenDataDTO>
 )
 
-fun PostDTO.toPost(): RedditPost {
-    return RedditPost(
-        id = 0, author = author,
-        award_count = award_count,
-        description = description,
-        comment_count = comment_count
-    )
-}
-
 data class ChildrenDataDTO(
     @SerializedName("data") val data: PostDTO
 )
