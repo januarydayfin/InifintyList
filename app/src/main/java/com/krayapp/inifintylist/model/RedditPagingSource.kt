@@ -23,10 +23,10 @@ class RedditPagingSource(
         return try {
             val pageNumber = params.key ?: INITIAL_PAGE_NUMBER
             val pageSize = params.loadSize.coerceAtMost(RedditPostSource.MAX_PAGE_SIZE)
-            val response = apiSource.getPosts()
+            val response = apiSource.getPosts(pageNumber,pageSize)
             println("VVV ${response.body()}")
             if (response.isSuccessful) {
-                val hotPost = response.body()!!.data.children.map { it.data.toPost() }
+                val hotPost = response.body()!!.data.children.map { it.toPost() }
                 val nextPageNumber = if (hotPost.isEmpty()) null else pageNumber + 1
                 val prevPageNumber = if (pageNumber > 1) pageNumber - 1 else null
                 LoadResult.Page(hotPost, prevPageNumber, nextPageNumber)
